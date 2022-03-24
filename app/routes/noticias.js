@@ -1,10 +1,10 @@
-module.exports=function(app){ //módulo para a rota noticias
+module.exports=function(app){ //módulo da conexão do servidor para a rota noticias 
 
     app.get('/noticias', function(req,res){ //rota para a tela notícias
-        const dbConnection=require('../../config/dbConnection');
+        const dbConnection=require('../../config/dbConnection'); //impotação do dbConnection
         const connection=dbConnection();
 
-        connection.query('select * from noticias', function (error, result){
+        connection.query('select * from noticias', function (error, result){ //função para para a condiçao error (erro) e result (resultado)
             if(error){
                 console.log(error);
             }
